@@ -9,8 +9,11 @@ atuin-cd() {
         MAX(timestamp) / 1000000000,
         'unixepoch'
       ) ||
-      char(27) || '[0m ' ||
+      char(27) || '[0m'
+      || char(9) ||
       replace(cwd, '$HOME', '~')
+      || char(9) ||
+      cwd
     FROM history
     WHERE cwd IS NOT NULL
       AND cwd != ''
