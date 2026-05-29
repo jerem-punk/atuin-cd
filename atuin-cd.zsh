@@ -17,8 +17,10 @@ atuin-cd() {
     ORDER BY MAX(timestamp) DESC;
   " | fzf \
     --ansi \
+    --no-sort \
     --delimiter=$'\t' \
     --with-nth=1,2 \
     --nth=2 \
     --accept-nth=3
 }
+
