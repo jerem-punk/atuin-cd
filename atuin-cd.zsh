@@ -24,3 +24,12 @@ atuin-cd() {
     --accept-nth=3
 }
 
+fzf_preview_layout() {
+  if (( COLUMNS > 100 )); then
+    echo "right,70%"
+  elif (( LINES > 30 )); then
+    echo "up,50%"
+  else
+    echo "hidden"
+  fi
+}
