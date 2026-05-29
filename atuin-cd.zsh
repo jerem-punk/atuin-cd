@@ -4,11 +4,7 @@ atuin-cd() {
   sqlite3 "$db" "
     SELECT
       char(27) || '[34m' ||
-      strftime(
-        '%Y-%m-%d',
-        MAX(timestamp) / 1000000000,
-        'unixepoch'
-      ) ||
+      strftime('%Y-%m-%d', MAX(timestamp) / 1000000000, 'unixepoch') ||
       char(27) || '[0m'
       || char(9) ||
       replace(cwd, '$HOME', '~')
@@ -19,5 +15,10 @@ atuin-cd() {
       AND cwd != ''
     GROUP BY cwd
     ORDER BY MAX(timestamp) DESC;
-  "
+  " | fzf \
+    --ansi \
+    --delimiter=$'\t' \
+    --with-nth=1,2 \
+    --nth=2 \
+    --accept-nth=3
 }
