@@ -42,4 +42,12 @@ atuin-cd() {
   [[ -n "$selected_dir" ]] && cd "$selected_dir"
 }
 
+atuin-cd-widget() {
+  atuin-cd
+  zle reset-prompt
+}
+
+zle -N atuin-cd-widget
+bindkey '^[d' atuin-cd-widget
+
 
