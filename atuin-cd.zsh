@@ -1,6 +1,6 @@
 fzf_preview_layout() {
   if (( COLUMNS > 100 )); then
-    echo "right,70%"
+    echo "right,60%"
   elif (( LINES > 30 )); then
     echo "up,50%"
   else
@@ -19,7 +19,7 @@ atuin-cd() {
         char(27) || '[34m' ||
         strftime('%Y-%m-%d', MAX(timestamp) / 1000000000, 'unixepoch') ||
         char(27) || '[0m'
-        || char(9) ||
+        || ' ' ||
         replace(cwd, '$HOME', '~')
         || char(9) ||
         cwd
@@ -32,10 +32,9 @@ atuin-cd() {
       --ansi \
       --no-sort \
       --delimiter=$'\t' \
-      --with-nth=1,2 \
-      --nth=2 \
-      --accept-nth=3 \
-      --preview 'eza -lah --icons --color=always {3}' \
+      --with-nth=1 \
+      --accept-nth=2 \
+      --preview 'eza -lah --icons --color=always {2}' \
       --preview-window "$(fzf_preview_layout)"
   )"
 
