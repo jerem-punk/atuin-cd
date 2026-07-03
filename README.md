@@ -25,8 +25,6 @@ jumping back there should be instant.
 -   Fuzzy search with `fzf`.
 -   Directory preview powered by `eza`.
 -   Automatically adapts the preview layout to the terminal size.
--   Displays `~` instead of `$HOME` for readability.
--   Returns the real absolute path internally.
 -   Keyboard shortcut (`Alt+d`) via a ZLE widget.
 
 ![youhou](ecureuil-volant.jpg)
@@ -62,20 +60,6 @@ Reload your shell:
 
 ``` bash
 source ~/.zshrc
-```
-
-## Manual installation
-
-Clone the repository anywhere:
-
-``` bash
-git clone https://github.com/jerem-punk/atuin-cd ~/code/atuin-cd
-```
-
-Source it from your `.zshrc`:
-
-``` zsh
-source ~/code/atuin-cd/atuin-cd.plugin.zsh
 ```
 
 ## Usage
@@ -134,4 +118,6 @@ The binding invokes the `atuin-cd-widget` ZLE widget.
 
 ## License
 
-MIT
+you should be allowed to do what the fuck you want with my dead body.
+
+not dead yet, i shouldn't be allowed to tell you what you want to do with this code.
