@@ -2,6 +2,12 @@
 
 ![logo](logo.jpg)
 
+----------------
+
+Disclaimer: vibecoded but cool.
+
+------------
+
 A tiny Zsh / Oh My Zsh plugin to jump back to directories from your
 Atuin history.
 
