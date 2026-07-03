@@ -1,5 +1,7 @@
 # atuin-cd
 
+![logo](logo.jpg)
+
 A tiny Zsh / Oh My Zsh plugin to jump back to directories from your
 Atuin history.
 
@@ -20,6 +22,8 @@ jumping back there should be instant.
 -   Displays `~` instead of `$HOME` for readability.
 -   Returns the real absolute path internally.
 -   Keyboard shortcut (`Alt+d`) via a ZLE widget.
+
+![youhou](ecureuil-volant.jpg)
 
 ## Requirements
 
