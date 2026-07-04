@@ -118,6 +118,4 @@ The binding invokes the `atuin-cd-widget` ZLE widget.
 
 ## License
 
-you should be allowed to do what the fuck you want with my dead body.
-
-not dead yet, i shouldn't be allowed to tell you what you want to do with this code.
+MIT
