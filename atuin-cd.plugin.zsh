@@ -8,6 +8,15 @@ fzf_preview_layout() {
   fi
 }
 
+fzf_preview_command() {
+  cat <<'EOF'
+dir={2}
+atuin search --cwd "$dir" --limit 5 --format "{time} {command}"
+printf '\n'
+eza -lah --icons --color=always "$dir"
+EOF
+}
+
 atuin-select-dir() {
   local db="${ATUIN_DB:-$HOME/.local/share/atuin/history.db}"
   sqlite3 "$db" "
@@ -30,7 +39,7 @@ atuin-select-dir() {
     --delimiter=$'\t' \
     --with-nth=1 \
     --accept-nth=2 \
-    --preview 'eza -lah --icons --color=always {2}' \
+    --preview "$(fzf_preview_command)" \
     --preview-window "$(fzf_preview_layout)"
 }
 
@@ -51,4 +60,3 @@ atuin-cd-widget() {
 
 zle -N atuin-cd-widget
 bindkey '^[d' atuin-cd-widget
-
