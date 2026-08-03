@@ -54,7 +54,7 @@ atuin-cd-widget() {
     cd -- "$selected_dir"
     zle reset-prompt
   else
-    LBUFFER+="${(q)selected_dir}"
+    LBUFFER+="${(q)selected_dir}/"
   fi
 }
 
